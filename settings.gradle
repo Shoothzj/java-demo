@@ -1,0 +1,9 @@
+rootProject.name = 'java-demo'
+include 'demo-base'
+include 'demo-pulsar'
+include 'demo-basic'
+include 'demo-jaeger'
+include 'demo-caffeine'
+include 'demo-spring-boot-mysql'
+include 'demo-log4j2'
+
