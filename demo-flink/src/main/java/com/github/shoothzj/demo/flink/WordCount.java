@@ -28,7 +28,6 @@ public class WordCount {
                 "Storm Storm Storm"
         );
         // 通过flink内置的转换函数计算
-//        DataSet<Tuple2<String, Integer>> counts = text.flatM
         AggregateOperator<Tuple2<String, Integer>> counts = text.flatMap(new LineSplitter()).groupBy(0).sum(1);
         counts.printToErr();
     }
