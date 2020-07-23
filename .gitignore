@@ -13,7 +13,7 @@
 # gradle
 .gradle/**
 gradle/**
-build/**
+**/build/**
 
 # mqtt client java
 *.lck
