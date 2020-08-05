@@ -9,5 +9,6 @@ include 'demo-log4j2'
 include 'demo-flink'
 include 'demo-storm'
 include 'demo-beam'
-include 'demo-servicecomb-producer'
+include 'demo-cassandra'
+include 'demo-db'
 
