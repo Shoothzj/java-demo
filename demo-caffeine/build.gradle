@@ -10,10 +10,10 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.ben-manes.caffeine:caffeine:2.8.5'
+    implementation 'com.github.ben-manes.caffeine:caffeine:2.8.5'
 
     //基本包
-    compile project (":demo-base")
+    implementation project (":demo-base")
 
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
 }
