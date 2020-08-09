@@ -14,4 +14,5 @@ include 'demo-db'
 include 'demo-spring-boot-mongo'
 include 'demo-jdbc-mysql'
 include 'demo-db-jdbc-mariadb'
+include 'demo-hadoop'
 
