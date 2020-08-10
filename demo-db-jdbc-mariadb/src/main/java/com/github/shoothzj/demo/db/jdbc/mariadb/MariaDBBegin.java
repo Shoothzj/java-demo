@@ -14,7 +14,8 @@ public class MariaDBBegin {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         Class.forName(TestConstant.DRIVER_NAME);
         // Now try to connect
-        try (Connection c = DriverManager.getConnection(MariaUtil.getConnStr(), MariaUtil.getProperties());) {
+        String connStr = MariaUtil.getConnStr();
+        try (Connection c = DriverManager.getConnection(connStr, MariaUtil.getProperties());) {
             System.out.println("It works !");
         }
     }

@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 public class MariaUtil {
 
     public static String getConnStr() {
-        return "jdbc:mariadb://localhost:3306/" + TestConstant.TABLE_NAME;
+        return "jdbc:mariadb://localhost:3306/" + TestConstant.TABLE_NAME + "?allowPublicKeyRetrieval=true";
     }
 
     public static Properties getProperties() {

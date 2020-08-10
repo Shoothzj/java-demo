@@ -3,7 +3,7 @@ package com.github.shoothzj.demo.db.jdbc.mariadb.singlefield;
 import com.github.shoothzj.demo.db.jdbc.mariadb.TestConstant;
 import com.github.shoothzj.demo.db.jdbc.mariadb.singlefield.util.MariadbTestUtil;
 import com.github.shoothzj.demo.db.jdbc.mariadb.util.MariaUtil;
-import com.github.shoothzj.demo.db.singlefield.TestBoolean;
+import com.github.shoothzj.demo.db.singlefield.TestInt;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.core.config.Configurator;
@@ -23,7 +23,7 @@ import java.util.UUID;
  * @author hezhangjian
  */
 @Slf4j
-public class MariadbJdbcTestBoolean {
+public class MariadbJdbcTestInt {
 
     /**
      * init jdbc driver and log4j
@@ -46,7 +46,7 @@ public class MariadbJdbcTestBoolean {
     @Test
     @Ignore
     public void createTable() throws Exception {
-        String createTable = MariadbTestUtil.concatCreateTable(TestBoolean.class, "BOOLEAN");
+        String createTable = MariadbTestUtil.concatCreateTable(TestInt.class, "INTEGER");
         try (Connection c = DriverManager.getConnection(MariaUtil.getConnStr(), MariaUtil.getProperties());) {
             Statement statement = c.createStatement();
             int update = statement.executeUpdate(createTable);
@@ -57,11 +57,11 @@ public class MariadbJdbcTestBoolean {
     @Test
     @Ignore
     public void insertData() throws Exception {
-        String insertSql = MariadbTestUtil.concatInsert(TestBoolean.class);
+        String insertSql = MariadbTestUtil.concatInsert(TestInt.class);
         try (Connection c = DriverManager.getConnection(MariaUtil.getConnStr(), MariaUtil.getProperties());) {
             PreparedStatement statement = c.prepareStatement(insertSql);
             statement.setString(1, UUID.randomUUID().toString());
-            statement.setBoolean(2, true);
+            statement.setInt(2, 8);
             boolean execute = statement.execute();
             log.info("execute result is [{}]", execute);
         }
@@ -70,12 +70,12 @@ public class MariadbJdbcTestBoolean {
     @Test
     @Ignore
     public void queryData() throws Exception {
-        String querySql = MariadbTestUtil.concatQuery(TestBoolean.class);
+        String querySql = MariadbTestUtil.concatQuery(TestInt.class);
         try (Connection c = DriverManager.getConnection(MariaUtil.getConnStr(), MariaUtil.getProperties());) {
             Statement statement = c.createStatement();
             ResultSet resultSet = statement.executeQuery(querySql);
             Assert.assertTrue(resultSet.next());
-            log.info("id is [{}], field is [{}]", resultSet.getString("id"), resultSet.getBoolean("field"));
+            log.info("id is [{}], field is [{}]", resultSet.getString("id"), resultSet.getInt("field"));
             Assert.assertFalse(resultSet.next());
         }
     }
@@ -83,7 +83,8 @@ public class MariadbJdbcTestBoolean {
     @Test
     @Ignore
     public void dropTable() throws Exception {
-        MariadbTestUtil.dropTable(TestBoolean.class);
+        MariadbTestUtil.dropTable(TestInt.class);
     }
+
 
 }
