@@ -1,7 +1,8 @@
 package com.github.shoothzj.demo.db.jdbc.mariadb.singlefield;
 
 import com.github.shoothzj.demo.db.jdbc.mariadb.TestConstant;
-import com.github.shoothzj.demo.db.jdbc.mariadb.singlefield.util.MariadbTestUtil;
+import com.github.shoothzj.demo.db.jdbc.mariadb.module.FieldDescribe;
+import com.github.shoothzj.demo.db.jdbc.mariadb.util.MariaSingleFieldUtil;
 import com.github.shoothzj.demo.db.jdbc.mariadb.util.MariaUtil;
 import com.github.shoothzj.demo.db.singlefield.TestBoolean;
 import lombok.extern.slf4j.Slf4j;
@@ -16,7 +17,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.Statement;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 /**
@@ -46,18 +50,35 @@ public class MariadbJdbcTestBoolean {
     @Test
     @Ignore
     public void createTable() throws Exception {
-        String createTable = MariadbTestUtil.concatCreateTable(TestBoolean.class, "BOOLEAN");
+        MariaSingleFieldUtil.createTable(TestBoolean.class, "BOOLEAN");
+    }
+
+    @Test
+    @Ignore
+    public void describeTable() throws Exception {
+        Map<String, FieldDescribe> map = new HashMap<>();
+        String querySql = MariaSingleFieldUtil.concatQuery(TestBoolean.class);
         try (Connection c = DriverManager.getConnection(MariaUtil.getConnStr(), MariaUtil.getProperties());) {
             Statement statement = c.createStatement();
-            int update = statement.executeUpdate(createTable);
-            log.info("update is [{}]", update);
+            ResultSet resultSet = statement.executeQuery(querySql);
+            ResultSetMetaData metaData = resultSet.getMetaData();
+            int size = metaData.getColumnCount();
+            for (int i = 1; i <= size; i++) {
+                FieldDescribe fieldDescribe = new FieldDescribe();
+                fieldDescribe.setColumnType(metaData.getColumnType(i));
+                fieldDescribe.setColumnTypeName(metaData.getColumnTypeName(i));
+                fieldDescribe.setColumnDisplaySize(metaData.getColumnDisplaySize(i));
+                fieldDescribe.setColumnLabel(metaData.getColumnLabel(i));
+                map.put(metaData.getColumnName(i), fieldDescribe);
+            }
         }
+        log.info("map is [{}]", map);
     }
 
     @Test
     @Ignore
     public void insertData() throws Exception {
-        String insertSql = MariadbTestUtil.concatInsert(TestBoolean.class);
+        String insertSql = MariaSingleFieldUtil.concatInsert(TestBoolean.class);
         try (Connection c = DriverManager.getConnection(MariaUtil.getConnStr(), MariaUtil.getProperties());) {
             PreparedStatement statement = c.prepareStatement(insertSql);
             statement.setString(1, UUID.randomUUID().toString());
@@ -70,7 +91,7 @@ public class MariadbJdbcTestBoolean {
     @Test
     @Ignore
     public void queryData() throws Exception {
-        String querySql = MariadbTestUtil.concatQuery(TestBoolean.class);
+        String querySql = MariaSingleFieldUtil.concatQuery(TestBoolean.class);
         try (Connection c = DriverManager.getConnection(MariaUtil.getConnStr(), MariaUtil.getProperties());) {
             Statement statement = c.createStatement();
             ResultSet resultSet = statement.executeQuery(querySql);
@@ -83,7 +104,7 @@ public class MariadbJdbcTestBoolean {
     @Test
     @Ignore
     public void dropTable() throws Exception {
-        MariadbTestUtil.dropTable(TestBoolean.class);
+        MariaSingleFieldUtil.dropTable(TestBoolean.class);
     }
 
 }

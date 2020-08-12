@@ -1,7 +1,7 @@
 package com.github.shoothzj.demo.db.jdbc.mariadb.singlefield;
 
 import com.github.shoothzj.demo.db.jdbc.mariadb.TestConstant;
-import com.github.shoothzj.demo.db.jdbc.mariadb.singlefield.util.MariadbTestUtil;
+import com.github.shoothzj.demo.db.jdbc.mariadb.util.MariaSingleFieldUtil;
 import com.github.shoothzj.demo.db.jdbc.mariadb.util.MariaUtil;
 import com.github.shoothzj.demo.db.singlefield.TestInt;
 import lombok.extern.slf4j.Slf4j;
@@ -46,7 +46,7 @@ public class MariadbJdbcTestInt {
     @Test
     @Ignore
     public void createTable() throws Exception {
-        String createTable = MariadbTestUtil.concatCreateTable(TestInt.class, "INTEGER");
+        String createTable = MariaSingleFieldUtil.concatCreateTable(TestInt.class, "INTEGER");
         try (Connection c = DriverManager.getConnection(MariaUtil.getConnStr(), MariaUtil.getProperties());) {
             Statement statement = c.createStatement();
             int update = statement.executeUpdate(createTable);
@@ -57,7 +57,7 @@ public class MariadbJdbcTestInt {
     @Test
     @Ignore
     public void insertData() throws Exception {
-        String insertSql = MariadbTestUtil.concatInsert(TestInt.class);
+        String insertSql = MariaSingleFieldUtil.concatInsert(TestInt.class);
         try (Connection c = DriverManager.getConnection(MariaUtil.getConnStr(), MariaUtil.getProperties());) {
             PreparedStatement statement = c.prepareStatement(insertSql);
             statement.setString(1, UUID.randomUUID().toString());
@@ -70,7 +70,7 @@ public class MariadbJdbcTestInt {
     @Test
     @Ignore
     public void queryData() throws Exception {
-        String querySql = MariadbTestUtil.concatQuery(TestInt.class);
+        String querySql = MariaSingleFieldUtil.concatQuery(TestInt.class);
         try (Connection c = DriverManager.getConnection(MariaUtil.getConnStr(), MariaUtil.getProperties());) {
             Statement statement = c.createStatement();
             ResultSet resultSet = statement.executeQuery(querySql);
@@ -83,7 +83,7 @@ public class MariadbJdbcTestInt {
     @Test
     @Ignore
     public void dropTable() throws Exception {
-        MariadbTestUtil.dropTable(TestInt.class);
+        MariaSingleFieldUtil.dropTable(TestInt.class);
     }
 
 

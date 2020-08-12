@@ -16,4 +16,7 @@ include 'demo-db-jdbc-mysql'
 include 'demo-db-jdbc-mariadb'
 include 'demo-hadoop'
 include 'demo-jetty'
+include 'demo-db-hikaricp-mariadb'
+include 'demo-kafka'
+include 'demo-forward'
 

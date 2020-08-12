@@ -1,7 +1,6 @@
-package com.github.shoothzj.demo.db.jdbc.mariadb.singlefield.util;
+package com.github.shoothzj.demo.db.jdbc.mariadb.util;
 
 import com.github.shoothzj.demo.db.annotation.Table;
-import com.github.shoothzj.demo.db.jdbc.mariadb.util.MariaUtil;
 import lombok.extern.slf4j.Slf4j;
 
 import java.sql.Connection;
@@ -12,14 +11,21 @@ import java.sql.Statement;
  * @author hezhangjian
  */
 @Slf4j
-public class MariadbTestUtil {
+public class MariaSingleFieldUtil {
 
-    public static <T> void dropTable(Class<T> type) throws Exception {
-        String createTable = MariadbTestUtil.concatDropTable(type);
+    public static <T> void createTable(Class<T> type, String columnDesc) throws Exception {
+        String createTable = MariaSingleFieldUtil.concatCreateTable(type, columnDesc);
         try (Connection c = DriverManager.getConnection(MariaUtil.getConnStr(), MariaUtil.getProperties());) {
             Statement statement = c.createStatement();
-            int update = statement.executeUpdate(createTable);
-            log.info("update is [{}]", update);
+            statement.executeUpdate(createTable);
+        }
+    }
+
+    public static <T> void dropTable(Class<T> type) throws Exception {
+        String createTable = MariaSingleFieldUtil.concatDropTable(type);
+        try (Connection c = DriverManager.getConnection(MariaUtil.getConnStr(), MariaUtil.getProperties());) {
+            Statement statement = c.createStatement();
+            statement.executeUpdate(createTable);
         }
     }
 
@@ -42,6 +48,11 @@ public class MariadbTestUtil {
     public static <T> String concatDropTable(Class<T> type) {
         Table typeAnnotation = type.getAnnotation(Table.class);
         return "DROP TABLE " + typeAnnotation.name();
+    }
+
+    public static <T> String getTableName(Class<T> type) {
+        Table typeAnnotation = type.getAnnotation(Table.class);
+        return typeAnnotation.name();
     }
 
 }

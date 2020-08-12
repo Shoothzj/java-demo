@@ -1,7 +1,7 @@
 package com.github.shoothzj.demo.db.jdbc.mariadb.singlefield;
 
 import com.github.shoothzj.demo.db.jdbc.mariadb.TestConstant;
-import com.github.shoothzj.demo.db.jdbc.mariadb.singlefield.util.MariadbTestUtil;
+import com.github.shoothzj.demo.db.jdbc.mariadb.util.MariaSingleFieldUtil;
 import com.github.shoothzj.demo.db.jdbc.mariadb.util.MariaUtil;
 import com.github.shoothzj.demo.db.singlefield.TestBoolean;
 import lombok.extern.slf4j.Slf4j;
@@ -46,7 +46,7 @@ public class MariadbJdbcTestDouble {
     @Test
     @Ignore
     public void createTable() throws Exception {
-        String createTable = MariadbTestUtil.concatCreateTable(TestBoolean.class, "DOUBLE");
+        String createTable = MariaSingleFieldUtil.concatCreateTable(TestBoolean.class, "DOUBLE");
         try (Connection c = DriverManager.getConnection(MariaUtil.getConnStr(), MariaUtil.getProperties());) {
             Statement statement = c.createStatement();
             int update = statement.executeUpdate(createTable);
@@ -57,7 +57,7 @@ public class MariadbJdbcTestDouble {
     @Test
     @Ignore
     public void insertData() throws Exception {
-        String insertSql = MariadbTestUtil.concatInsert(TestBoolean.class);
+        String insertSql = MariaSingleFieldUtil.concatInsert(TestBoolean.class);
         try (Connection c = DriverManager.getConnection(MariaUtil.getConnStr(), MariaUtil.getProperties());) {
             PreparedStatement statement = c.prepareStatement(insertSql);
             statement.setString(1, UUID.randomUUID().toString());
@@ -70,7 +70,7 @@ public class MariadbJdbcTestDouble {
     @Test
     @Ignore
     public void queryData() throws Exception {
-        String querySql = MariadbTestUtil.concatQuery(TestBoolean.class);
+        String querySql = MariaSingleFieldUtil.concatQuery(TestBoolean.class);
         try (Connection c = DriverManager.getConnection(MariaUtil.getConnStr(), MariaUtil.getProperties());) {
             Statement statement = c.createStatement();
             ResultSet resultSet = statement.executeQuery(querySql);
@@ -83,7 +83,7 @@ public class MariadbJdbcTestDouble {
     @Test
     @Ignore
     public void dropTable() throws Exception {
-        MariadbTestUtil.dropTable(TestBoolean.class);
+        MariaSingleFieldUtil.dropTable(TestBoolean.class);
     }
 
 }

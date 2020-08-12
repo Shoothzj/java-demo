@@ -28,3 +28,6 @@ benchmark/**
 /demo-basic/build/classes/java/main/
 /demo-pulsar/build/
 /demo-pulsar/build/classes/java/main/
+
+# Custom
+ttbb.jar
