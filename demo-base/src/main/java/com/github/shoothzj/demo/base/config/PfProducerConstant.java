@@ -1,4 +1,4 @@
-package com.github.shoothzj.demo.kafka.pf;
+package com.github.shoothzj.demo.base.config;
 
 import lombok.extern.slf4j.Slf4j;
 

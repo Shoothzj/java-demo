@@ -24,6 +24,30 @@ public class EnvUtil {
      */
     private static final String osVersion = System.getProperty("os.version");
 
+    public static int getIntVar(String property, String env, int defaultVal) {
+        String prop = System.getProperty(property);
+        if (StringUtil.isNotEmpty(prop)) {
+            return Integer.parseInt(prop);
+        }
+        String envVal = System.getenv(env);
+        if (StringUtil.isNotEmpty(envVal)) {
+            return Integer.parseInt(envVal);
+        }
+        return defaultVal;
+    }
+
+    public static String getStringVar(String property, String env, String defaultVal) {
+        String prop = System.getProperty(property);
+        if (StringUtil.isNotEmpty(prop)) {
+            return prop;
+        }
+        String envVal = System.getenv(env);
+        if (StringUtil.isNotEmpty(envVal)) {
+            return envVal;
+        }
+        return defaultVal;
+    }
+
     public static String getUserHome() {
         return userHome;
     }

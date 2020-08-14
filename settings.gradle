@@ -19,4 +19,5 @@ include 'demo-jetty'
 include 'demo-db-hikaricp-mariadb'
 include 'demo-kafka'
 include 'demo-forward'
+include 'demo-flink-forward'
 
