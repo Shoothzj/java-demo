@@ -1,9 +1,9 @@
 package com.github.shoothzj.demo.db.jdbc.mariadb.singlefield;
 
-import com.github.shoothzj.demo.db.jdbc.mariadb.TestConstant;
-import com.github.shoothzj.demo.db.jdbc.mariadb.module.FieldDescribe;
+import com.github.shoothzj.demo.base.mariadb.TestConstant;
+import com.github.shoothzj.demo.base.mariadb.module.FieldDescribe;
 import com.github.shoothzj.demo.db.jdbc.mariadb.util.MariaSingleFieldUtil;
-import com.github.shoothzj.demo.db.jdbc.mariadb.util.MariaUtil;
+import com.github.shoothzj.demo.base.mariadb.MariaUtil;
 import com.github.shoothzj.demo.db.singlefield.TestBoolean;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.Level;

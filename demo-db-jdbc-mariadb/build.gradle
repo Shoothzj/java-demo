@@ -14,6 +14,7 @@ dependencies {
 
     //基本包
     compile project (":demo-base")
+    compile project (":demo-base-mariadb")
     //db
     compile project (":demo-db")
 

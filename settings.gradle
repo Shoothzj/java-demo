@@ -20,4 +20,5 @@ include 'demo-db-hikaricp-mariadb'
 include 'demo-kafka'
 include 'demo-forward'
 include 'demo-flink-forward'
+include 'demo-base-mariadb'
 

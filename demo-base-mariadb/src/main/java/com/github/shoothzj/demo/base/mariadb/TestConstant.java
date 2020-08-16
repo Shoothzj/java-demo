@@ -1,4 +1,4 @@
-package com.github.shoothzj.demo.db.jdbc.mariadb;
+package com.github.shoothzj.demo.base.mariadb;
 
 import lombok.extern.slf4j.Slf4j;
 

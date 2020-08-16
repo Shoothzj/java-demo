@@ -27,7 +27,7 @@ public class FlinkKafka2Mysql {
         SingleOutputStreamOperator<TestDeviceDto> dtoOperator = env
                 .addSource(new FlinkKafkaConsumer<>("test_topic", new SimpleStringSchema(), props))
                 .map((MapFunction<String, TestDeviceDto>) value -> JacksonService.toObject(value, TestDeviceDto.class));
-        dtoOperator.addSink(new SinkToMySQL());
+        dtoOperator.addSink(new SinkToMySQL("127.0.0.1"));
         env.execute("kafka to mysql");
     }
 

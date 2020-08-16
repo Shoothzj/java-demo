@@ -1,5 +1,6 @@
 package com.github.shoothzj.demo.db.jdbc.mariadb.util;
 
+import com.github.shoothzj.demo.base.mariadb.MariaUtil;
 import com.github.shoothzj.demo.db.annotation.Table;
 import lombok.extern.slf4j.Slf4j;
 
@@ -37,7 +38,7 @@ public class MariaSingleFieldUtil {
 
     public static <T> String concatInsert(Class<T> type) {
         Table typeAnnotation = type.getAnnotation(Table.class);
-        return String.format("insert into %s (id, field) values (?, ?)", typeAnnotation.name());
+        return String.format("insert INTO %s (id, field) values (?, ?)", typeAnnotation.name());
     }
 
     public static <T> String concatQuery(Class<T> type) {

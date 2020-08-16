@@ -1,6 +1,7 @@
 package com.github.shoothzj.demo.db.jdbc.mariadb;
 
-import com.github.shoothzj.demo.db.jdbc.mariadb.util.MariaUtil;
+import com.github.shoothzj.demo.base.mariadb.TestConstant;
+import com.github.shoothzj.demo.base.mariadb.MariaUtil;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

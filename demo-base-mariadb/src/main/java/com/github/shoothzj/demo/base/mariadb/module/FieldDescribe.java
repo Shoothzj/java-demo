@@ -1,4 +1,4 @@
-package com.github.shoothzj.demo.db.jdbc.mariadb.module;
+package com.github.shoothzj.demo.base.mariadb.module;
 
 import lombok.Data;
 

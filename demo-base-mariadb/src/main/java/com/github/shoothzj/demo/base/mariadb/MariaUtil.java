@@ -1,7 +1,6 @@
-package com.github.shoothzj.demo.db.jdbc.mariadb.util;
+package com.github.shoothzj.demo.base.mariadb;
 
-import com.github.shoothzj.demo.db.jdbc.mariadb.TestConstant;
-import com.github.shoothzj.demo.db.jdbc.mariadb.module.FieldDescribe;
+import com.github.shoothzj.demo.base.mariadb.module.FieldDescribe;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
@@ -21,6 +20,10 @@ public class MariaUtil {
 
     public static String getConnStr() {
         return "jdbc:mariadb://localhost:3306/" + TestConstant.TABLE_NAME + "?allowPublicKeyRetrieval=true";
+    }
+
+    public static String getConnStr(String addr) {
+        return "jdbc:mariadb://" + addr + ":3306/" + TestConstant.TABLE_NAME + "?allowPublicKeyRetrieval=true";
     }
 
     public static Properties getProperties() {
