@@ -45,7 +45,8 @@ public class SinkToMySQL extends RichSinkFunction<TestDeviceDto> {
     }
 
     /**
-     * open () 方法中建立连接，这样不用每次invoke的时候都要建立连接，
+     * open () 方法中建立连接，这样不用每次invoke的时候都要建立连接.
+     * 有可能数据库已经存在
      * @param parameters
      * @throws Exception
      */

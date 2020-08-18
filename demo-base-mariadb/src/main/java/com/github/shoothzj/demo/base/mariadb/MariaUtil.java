@@ -1,11 +1,9 @@
 package com.github.shoothzj.demo.base.mariadb;
 
-import com.github.shoothzj.demo.base.mariadb.module.FieldDescribe;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Properties;
 
 /**
@@ -14,16 +12,12 @@ import java.util.Properties;
 @Slf4j
 public class MariaUtil {
 
-    public static Map<String, FieldDescribe> describeTable() {
-        return null;
-    }
-
     public static String getConnStr() {
-        return "jdbc:mariadb://localhost:3306/" + TestConstant.TABLE_NAME + "?allowPublicKeyRetrieval=true";
+        return "jdbc:mariadb://localhost:3306/" + TestConstant.TABLE_NAME + "?allowPublicKeyRetrieval=true&useSSL=false";
     }
 
     public static String getConnStr(String addr) {
-        return "jdbc:mariadb://" + addr + ":3306/" + TestConstant.TABLE_NAME + "?allowPublicKeyRetrieval=true";
+        return "jdbc:mariadb://" + addr + ":3306/" + TestConstant.TABLE_NAME + "?allowPublicKeyRetrieval=true&useSSL=false";
     }
 
     public static Properties getProperties() {

@@ -10,13 +10,8 @@ repositories {
 }
 
 dependencies {
-    compile group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.6.2'
-
     //基本包
     compile project (":demo-base")
-    compile project (":demo-base-mariadb")
-    //db
-    compile project (":demo-db")
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

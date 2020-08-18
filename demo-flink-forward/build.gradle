@@ -22,7 +22,7 @@ dependencies {
     // https://mvnrepository.com/artifact/org.apache.flink/flink-connector-kafka
     compile group: 'org.apache.flink', name: 'flink-connector-kafka_2.12', version: '1.11.1'
 
-    compile group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.6.0'
+    compile group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.6.2'
 
     compile project (":demo-flink")
     compile project (":demo-base-mariadb")
