@@ -21,4 +21,5 @@ include 'demo-kafka'
 include 'demo-forward'
 include 'demo-flink-forward'
 include 'demo-base-mariadb'
+include 'demo-db-hikaricp'
 
