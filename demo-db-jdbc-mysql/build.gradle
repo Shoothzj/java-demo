@@ -10,5 +10,15 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.21'
+
+    //基本包
+    compile project (":demo-base")
+    compile project (":demo-base-mariadb")
+    //db
+    compile project (":demo-db")
+
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.6.2'
+
 }

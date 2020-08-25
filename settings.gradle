@@ -22,4 +22,7 @@ include 'demo-forward'
 include 'demo-flink-forward'
 include 'demo-base-mariadb'
 include 'demo-db-hikaricp'
+include 'demo-rabbitmq'
+include 'demo-db-hikaricp-mysql'
+include 'demo-metrics'
 

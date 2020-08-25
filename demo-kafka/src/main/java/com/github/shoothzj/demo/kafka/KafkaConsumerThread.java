@@ -7,6 +7,7 @@ import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
+import java.time.Duration;
 import java.util.Collections;
 import java.util.Properties;
 
@@ -38,7 +39,7 @@ public class KafkaConsumerThread extends Thread {
     public void run() {
         while (true) {
             try {
-                ConsumerRecords<String, String> consumerRecords = consumer.poll(500);
+                ConsumerRecords<String, String> consumerRecords = consumer.poll(Duration.ofMillis(500));
                 for (ConsumerRecord<String, String> consumerRecord : consumerRecords) {
                     log.info("receive a record, offset is [{}]", consumerRecord.offset());
                 }

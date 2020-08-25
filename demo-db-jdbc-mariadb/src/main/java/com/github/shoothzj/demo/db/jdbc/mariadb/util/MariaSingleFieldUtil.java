@@ -33,7 +33,7 @@ public class MariaSingleFieldUtil {
     public static <T> String concatCreateTable(Class<T> type, String columnDesc) {
         Table typeAnnotation = type.getAnnotation(Table.class);
         return MariaUtil.concatCreateTable(typeAnnotation.name(), "id"
-                , "VARCHAR(200) PRIMARY KEY", "field", columnDesc);
+                , "VARCHAR(100) PRIMARY KEY", "field", columnDesc);
     }
 
     public static <T> String concatInsert(Class<T> type) {
