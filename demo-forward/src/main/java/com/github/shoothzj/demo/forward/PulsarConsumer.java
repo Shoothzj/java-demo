@@ -1,6 +1,6 @@
 package com.github.shoothzj.demo.forward;
 
-import com.github.shoothzj.demo.base.util.CommonUtil;
+import com.github.shoothzj.javatool.util.CommonUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.pulsar.client.api.Consumer;
 import org.apache.pulsar.client.api.Message;

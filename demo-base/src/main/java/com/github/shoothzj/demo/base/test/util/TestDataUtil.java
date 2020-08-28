@@ -1,7 +1,6 @@
 package com.github.shoothzj.demo.base.test.util;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.github.shoothzj.demo.base.service.JacksonService;
 import com.github.shoothzj.demo.base.test.module.ColorEnum;
 import com.github.shoothzj.demo.base.test.module.CompanyEnum;
 import com.github.shoothzj.demo.base.test.module.DeviceGroupEnum;
@@ -9,7 +8,8 @@ import com.github.shoothzj.demo.base.test.module.FloorEnum;
 import com.github.shoothzj.demo.base.test.module.ProtocolEnum;
 import com.github.shoothzj.demo.base.test.module.TestDeviceDto;
 import com.github.shoothzj.demo.base.test.module.WeatherEnum;
-import com.github.shoothzj.demo.base.util.RandomUtil;
+import com.github.shoothzj.javatool.service.JacksonService;
+import com.github.shoothzj.javatool.util.RandomUtil;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDateTime;
@@ -55,34 +55,34 @@ public class TestDataUtil {
 
         {
             ObjectNode objectNode = JacksonService.createObjectNode();
-            if (RandomUtil.randomIf()) {
+            if (RandomUtil.randomBoolean()) {
                 objectNode.put("color", RandomUtil.randomEnum(ColorEnum.class).toString());
             }
-            if (RandomUtil.randomIf()) {
+            if (RandomUtil.randomBoolean()) {
                 objectNode.put("floor", RandomUtil.randomEnum(FloorEnum.class).toString());
             }
-            if (RandomUtil.randomIf()) {
+            if (RandomUtil.randomBoolean()) {
                 objectNode.put("country", RandomUtil.randomEnum(FloorEnum.class).toString());
             }
-            if (RandomUtil.randomIf()) {
+            if (RandomUtil.randomBoolean()) {
                 objectNode.put("protocol", RandomUtil.randomEnum(ProtocolEnum.class).toString());
             }
-            if (RandomUtil.randomIf()) {
+            if (RandomUtil.randomBoolean()) {
                 objectNode.put("company", RandomUtil.randomEnum(CompanyEnum.class).toString());
             }
-            if (RandomUtil.randomIf()) {
+            if (RandomUtil.randomBoolean()) {
                 objectNode.put("weather", RandomUtil.randomEnum(WeatherEnum.class).toString());
             }
-            if (RandomUtil.randomIf()) {
+            if (RandomUtil.randomBoolean()) {
                 objectNode.put("speed", RandomUtil.randomInt(10, 250));
             }
-            if (RandomUtil.randomIf()) {
+            if (RandomUtil.randomBoolean()) {
                 objectNode.put("milage", RandomUtil.randomInt(5, 50000));
             }
-            if (RandomUtil.randomIf()) {
+            if (RandomUtil.randomBoolean()) {
                 objectNode.put("eventTime", System.currentTimeMillis() + RandomUtil.randomInt(-200, 200));
             }
-            if (RandomUtil.randomIf()) {
+            if (RandomUtil.randomBoolean()) {
                 objectNode.put("humidity", RandomUtil.randomInt(-100, 100));
             }
             testDeviceDto.setTags(objectNode);

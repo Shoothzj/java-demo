@@ -1,8 +1,8 @@
 package com.github.shoothzj.demo.metrics;
 
-import com.github.shoothzj.demo.base.module.ShellResult;
-import com.github.shoothzj.demo.base.util.LogUtil;
-import com.github.shoothzj.demo.base.util.ShellUtil;
+import com.github.shoothzj.javatool.module.ShellResult;
+import com.github.shoothzj.javatool.util.LogUtil;
+import com.github.shoothzj.javatool.util.ShellUtil;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.Executors;

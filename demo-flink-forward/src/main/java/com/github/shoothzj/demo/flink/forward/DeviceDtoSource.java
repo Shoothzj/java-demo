@@ -2,7 +2,7 @@ package com.github.shoothzj.demo.flink.forward;
 
 import com.github.shoothzj.demo.base.test.module.TestDeviceDto;
 import com.github.shoothzj.demo.base.test.util.TestDataUtil;
-import com.github.shoothzj.demo.base.util.CommonUtil;
+import com.github.shoothzj.javatool.util.CommonUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.flink.streaming.api.functions.source.RichParallelSourceFunction;
 

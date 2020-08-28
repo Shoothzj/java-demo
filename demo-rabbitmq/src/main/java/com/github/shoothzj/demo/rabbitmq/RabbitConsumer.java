@@ -1,7 +1,7 @@
 package com.github.shoothzj.demo.rabbitmq;
 
-import com.github.shoothzj.demo.base.util.CommonUtil;
-import com.github.shoothzj.demo.base.util.LogUtil;
+import com.github.shoothzj.javatool.util.CommonUtil;
+import com.github.shoothzj.javatool.util.LogUtil;
 import com.rabbitmq.client.AMQP;
 import com.rabbitmq.client.Address;
 import com.rabbitmq.client.Channel;

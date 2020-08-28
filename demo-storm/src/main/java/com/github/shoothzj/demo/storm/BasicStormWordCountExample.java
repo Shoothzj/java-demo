@@ -1,6 +1,6 @@
 package com.github.shoothzj.demo.storm;
 
-import com.github.shoothzj.demo.base.util.CommonUtil;
+import com.github.shoothzj.javatool.util.CommonUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.storm.Config;
 import org.apache.storm.LocalCluster;

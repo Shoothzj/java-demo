@@ -15,7 +15,7 @@
  */
 package io.github.streamingwithflink.chapter1;
 
-import com.github.shoothzj.demo.base.util.LogUtil;
+import com.github.shoothzj.javatool.util.LogUtil;
 import io.github.streamingwithflink.util.SensorReading;
 import io.github.streamingwithflink.util.SensorSource;
 import io.github.streamingwithflink.util.SensorTimeAssigner;

@@ -1,6 +1,6 @@
 package com.github.shoothzj.demo.pulsar;
 
-import com.github.shoothzj.demo.base.util.CommonUtil;
+import com.github.shoothzj.javatool.util.CommonUtil;
 import com.github.shoothzj.demo.pulsar.constant.PulsarConstant;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.pulsar.client.api.Producer;

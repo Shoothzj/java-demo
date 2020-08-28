@@ -1,9 +1,9 @@
 package com.github.shoothzj.demo.hikaricp.mysql;
 
-import com.github.shoothzj.demo.base.service.JacksonService;
 import com.github.shoothzj.demo.base.test.module.TestDeviceDto;
 import com.github.shoothzj.demo.base.test.util.TestDataUtil;
-import com.github.shoothzj.demo.base.util.LogUtil;
+import com.github.shoothzj.javatool.service.JacksonService;
+import com.github.shoothzj.javatool.util.LogUtil;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import lombok.extern.slf4j.Slf4j;

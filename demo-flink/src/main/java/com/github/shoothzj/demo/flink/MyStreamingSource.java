@@ -1,7 +1,7 @@
 package com.github.shoothzj.demo.flink;
 
 import com.github.shoothzj.demo.flink.module.Item;
-import com.github.shoothzj.demo.base.util.CommonUtil;
+import com.github.shoothzj.javatool.util.CommonUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.flink.streaming.api.functions.source.SourceFunction;
 

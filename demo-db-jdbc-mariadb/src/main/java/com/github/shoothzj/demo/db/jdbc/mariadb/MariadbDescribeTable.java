@@ -1,7 +1,7 @@
 package com.github.shoothzj.demo.db.jdbc.mariadb;
 
 import com.github.shoothzj.demo.base.mariadb.module.FieldDescribe;
-import com.github.shoothzj.demo.base.util.LogUtil;
+import com.github.shoothzj.javatool.util.LogUtil;
 import lombok.extern.slf4j.Slf4j;
 
 import java.sql.Connection;

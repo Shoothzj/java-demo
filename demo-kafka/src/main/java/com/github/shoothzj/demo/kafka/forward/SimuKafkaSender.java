@@ -1,9 +1,9 @@
 package com.github.shoothzj.demo.kafka.forward;
 
-import com.github.shoothzj.demo.base.service.JacksonService;
 import com.github.shoothzj.demo.base.test.module.TestDeviceDto;
 import com.github.shoothzj.demo.base.test.util.TestDataUtil;
-import com.github.shoothzj.demo.base.util.EnvUtil;
+import com.github.shoothzj.javatool.service.JacksonService;
+import com.github.shoothzj.javatool.util.EnvUtil;
 import com.github.shoothzj.demo.base.config.KafkaConfigConstant;
 import com.github.shoothzj.demo.base.config.PfProducerConstant;
 import com.google.common.collect.Lists;

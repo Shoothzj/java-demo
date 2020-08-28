@@ -23,11 +23,9 @@ benchmark/**
 
 # file system
 .DS_Store
-# Project exclude paths
-/demo-basic/build/
-/demo-basic/build/classes/java/main/
-/demo-pulsar/build/
-/demo-pulsar/build/classes/java/main/
+
+# secret
+secret/**
 
 # Custom
 ttbb.jar
