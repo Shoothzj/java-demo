@@ -1,4 +1,4 @@
-package com.github.shoothzj.demo.base.util;
+package com.github.shoothzj.demo.base.test.util;
 
 import lombok.extern.slf4j.Slf4j;
 

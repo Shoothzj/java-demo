@@ -7,6 +7,7 @@ import com.github.shoothzj.demo.base.test.module.DeviceGroupEnum;
 import com.github.shoothzj.demo.base.test.module.FloorEnum;
 import com.github.shoothzj.demo.base.test.module.ProtocolEnum;
 import com.github.shoothzj.demo.base.test.module.TestDeviceDto;
+import com.github.shoothzj.demo.base.test.module.TestElevatorSensorDto;
 import com.github.shoothzj.demo.base.test.module.WeatherEnum;
 import com.github.shoothzj.javatool.service.JacksonService;
 import com.github.shoothzj.javatool.util.RandomUtil;
@@ -21,6 +22,15 @@ import java.util.UUID;
  */
 @Slf4j
 public class TestDataUtil {
+
+    public static TestElevatorSensorDto generateTestElevatorSensorDto() {
+        TestElevatorSensorDto testElevatorSensorDto = new TestElevatorSensorDto();
+        testElevatorSensorDto.setDeviceName(UUID.randomUUID().toString());
+        testElevatorSensorDto.setRandomBoolean(RandomUtil.randomBoolean());
+        testElevatorSensorDto.setRandomFloat(RandomUtil.randomInt(0, 6));
+        testElevatorSensorDto.setRandomString(UUID.randomUUID().toString());
+        return testElevatorSensorDto;
+    }
 
     /**
      * @return

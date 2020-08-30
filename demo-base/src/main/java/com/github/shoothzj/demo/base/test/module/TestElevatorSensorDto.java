@@ -1,12 +1,14 @@
 package com.github.shoothzj.demo.base.test.module;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.Data;
 
 /**
  * @author hezhangjian
  */
-@Slf4j
-public class TestTimeSeriesDto {
+@Data
+public class TestElevatorSensorDto {
+
+    private String deviceName;
 
     private String tagKey;
 

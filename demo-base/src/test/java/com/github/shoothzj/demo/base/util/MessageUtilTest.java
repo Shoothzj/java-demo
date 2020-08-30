@@ -1,5 +1,6 @@
 package com.github.shoothzj.demo.base.util;
 
+import com.github.shoothzj.demo.base.test.util.MessageUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 

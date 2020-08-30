@@ -28,7 +28,7 @@ public class WordCountSQL {
             list.add(wordWithCount);
         }
         DataSet<WordWithCount> input = fbEnv.fromCollection(list);
-        // convert dataset to table
+        // convert dataset to tableapache-druid-0.19.0-bin.tar.gzapache-druid-0.19.0-bin.tar.gz
         Table table = fbTableEnv.fromDataSet(input, "word,frequency");
         table.printSchema();
 
