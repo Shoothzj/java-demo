@@ -4,6 +4,7 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import lombok.extern.slf4j.Slf4j;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
@@ -28,8 +29,10 @@ public class HikariTool {
     }
 
     public static void executeSql(String sql) throws SQLException {
-        PreparedStatement preparedStatement = ds.getConnection().prepareStatement(sql);
-        preparedStatement.execute();
+        try (Connection connection = ds.getConnection()){
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.execute();
+        }
     }
 
 }

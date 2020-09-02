@@ -11,7 +11,16 @@ repositories {
 }
 
 ext {
+    // 日志
+    log4jVersion = '2.13.3'
+
+    // Json解析
+    jacksonVersion = '2.11.2'
+
+    // hikari 连接池
     hikariVersion = '3.4.5'
+
+    // SpringBoot
     springBootVersion = '2.3.3.RELEASE'
 }
 

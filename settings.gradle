@@ -26,4 +26,6 @@ include 'demo-rabbitmq'
 include 'demo-db-hikaricp-mysql'
 include 'demo-metrics'
 include 'demo-db-influxdb'
+include 'demo-hc-obs'
+include 'demo-db-mongo'
 

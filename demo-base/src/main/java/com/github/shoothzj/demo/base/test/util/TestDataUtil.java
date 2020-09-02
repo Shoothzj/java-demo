@@ -8,6 +8,7 @@ import com.github.shoothzj.demo.base.test.module.FloorEnum;
 import com.github.shoothzj.demo.base.test.module.ProtocolEnum;
 import com.github.shoothzj.demo.base.test.module.TestDeviceDto;
 import com.github.shoothzj.demo.base.test.module.TestElevatorSensorDto;
+import com.github.shoothzj.demo.base.test.module.TestUserDto;
 import com.github.shoothzj.demo.base.test.module.WeatherEnum;
 import com.github.shoothzj.javatool.service.JacksonService;
 import com.github.shoothzj.javatool.util.RandomUtil;
@@ -22,6 +23,13 @@ import java.util.UUID;
  */
 @Slf4j
 public class TestDataUtil {
+
+    public static TestUserDto generateTestUserDto() {
+        final TestUserDto testUserDto = new TestUserDto();
+        testUserDto.setUserId(UUID.randomUUID().toString());
+        testUserDto.setAge(RandomUtil.randomInt(0, 99));
+        return testUserDto;
+    }
 
     public static TestElevatorSensorDto generateTestElevatorSensorDto() {
         TestElevatorSensorDto testElevatorSensorDto = new TestElevatorSensorDto();
