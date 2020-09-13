@@ -30,4 +30,7 @@ include 'demo-hc-obs'
 include 'demo-db-mongo'
 include 'demo-elasticsearch'
 include 'demo-tuya'
+include 'demo-californium'
+include 'demo-spring-boot-neo4j'
+include 'demo-neo4j'
 
