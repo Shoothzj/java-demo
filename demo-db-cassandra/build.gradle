@@ -12,6 +12,9 @@ repositories {
 dependencies {
     // https://mvnrepository.com/artifact/com.datastax.oss/java-driver-core
     compile group: 'com.datastax.oss', name: 'java-driver-core', version: '4.8.0'
+    compile group: 'com.datastax.oss', name: 'java-driver-query-builder', version: '4.8.0'
+    compile group: 'com.datastax.oss', name: 'java-driver-mapper-processor', version: '4.8.0'
+    compile group: 'com.datastax.oss', name: 'java-driver-mapper-runtime', version: '4.8.0'
 
     //基本包
     compile project (":demo-base")
