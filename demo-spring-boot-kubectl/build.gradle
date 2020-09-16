@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+group 'com.github.shoothzj'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: this.rootProject.springBootVersion
+// https://mvnrepository.com/artifact/io.kubernetes/client-java
+    compile group: 'io.kubernetes', name: 'client-java', version: '5.0.0'
+
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

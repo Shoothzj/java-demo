@@ -10,10 +10,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.huaweicloud:esdk-obs-java:3.20.6.1'
-
-    //基本包
-    compile project (":demo-base")
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: this.rootProject.springBootVersion
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

@@ -33,4 +33,8 @@ include 'demo-tuya'
 include 'demo-californium'
 include 'demo-spring-boot-neo4j'
 include 'demo-neo4j'
+include 'demo-storage-compat'
+include 'demo-jpath'
+include 'demo-spring-boot-kubectl'
+include 'demo-spring-boot-https'
 
