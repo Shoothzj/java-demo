@@ -1,14 +1,16 @@
 package com.github.shoothzj.demo.sb.mongo.config;
 
-import com.mongodb.MongoClient;
-import com.mongodb.MongoClientOptions;
+import com.mongodb.ConnectionString;
+import com.mongodb.MongoClientSettings;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.data.mongodb.MongoDbFactory;
-import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
+import org.springframework.data.mongodb.config.AbstractMongoClientConfiguration;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.convert.DbRefResolver;
 import org.springframework.data.mongodb.core.convert.DefaultDbRefResolver;
@@ -24,13 +26,13 @@ import java.util.List;
 @Slf4j
 @Configuration
 @EnableMongoRepositories(basePackages = "com.github.shoothzj.demo.sb.mongo.repo")
-public class MongoConfig extends AbstractMongoConfiguration {
-
+public class MongoConfig extends AbstractMongoClientConfiguration {
 
     @Override
     public MongoClient mongoClient() {
-        MongoClientOptions.Builder builder = new MongoClientOptions.Builder();
-        return new MongoClient("127.0.0.1", builder.build());
+        final MongoClientSettings.Builder builder = MongoClientSettings.builder();
+        builder.applyConnectionString(new ConnectionString("mongodb://localhost:27017"));
+        return MongoClients.create(builder.build());
     }
 
     @Override
