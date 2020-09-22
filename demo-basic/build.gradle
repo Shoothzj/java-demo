@@ -10,10 +10,6 @@ repositories {
 }
 
 dependencies {
-    // https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator
-    compile group: 'org.hibernate.validator', name: 'hibernate-validator', version: '6.1.5.Final'
-    // https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator-annotation-processor
-    compile group: 'org.hibernate.validator', name: 'hibernate-validator-annotation-processor', version: '6.1.5.Final'
     //基本包
     compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.13.3'
     compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.13.3'
