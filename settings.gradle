@@ -37,4 +37,8 @@ include 'demo-storage-compat'
 include 'demo-jpath'
 include 'demo-spring-boot-kubectl'
 include 'demo-spring-boot-https'
+include 'demo-nio'
+include 'demo-zookeeper'
+include 'demo-redis-lettuce'
+include 'demo-redis-jedis'
 

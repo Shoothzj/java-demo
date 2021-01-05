@@ -1,8 +1,14 @@
 package com.github.shoothzj.demo.pulsar;
 
 import com.github.shoothzj.demo.pulsar.constant.PulsarConstant;
-import org.apache.pulsar.client.api.*;
-import org.junit.jupiter.api.Test;
+import org.apache.pulsar.client.api.Consumer;
+import org.apache.pulsar.client.api.Message;
+import org.apache.pulsar.client.api.MessageId;
+import org.apache.pulsar.client.api.Producer;
+import org.apache.pulsar.client.api.PulsarClient;
+import org.apache.pulsar.client.api.PulsarClientException;
+import org.apache.pulsar.client.api.Schema;
+import org.apache.pulsar.client.api.SubscriptionType;
 
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
@@ -14,7 +20,6 @@ public class MultipleConsumerScene {
         multipleConsumerScene.testPatternTopic();
     }
 
-    @Test
     public void testPatternTopic() throws PulsarClientException, InterruptedException {
         String topic = "test" + UUID.randomUUID().toString();
         System.out.println(String.format("topic is %s", topic));

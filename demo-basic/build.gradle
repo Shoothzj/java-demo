@@ -11,6 +11,9 @@ repositories {
 
 dependencies {
     //基本包
+    // https://mvnrepository.com/artifact/javax.validation/validation-api
+
+    compile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
     compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.13.3'
     compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.13.3'
     annotationProcessor 'org.projectlombok:lombok:1.18.12'

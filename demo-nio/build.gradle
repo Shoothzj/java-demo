@@ -10,7 +10,5 @@ repositories {
 }
 
 dependencies {
-    compile project (":demo-base")
-
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

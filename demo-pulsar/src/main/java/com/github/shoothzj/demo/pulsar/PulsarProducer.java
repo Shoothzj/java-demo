@@ -1,7 +1,7 @@
 package com.github.shoothzj.demo.pulsar;
 
-import com.github.shoothzj.javatool.util.CommonUtil;
 import com.github.shoothzj.demo.pulsar.constant.PulsarConstant;
+import com.github.shoothzj.javatool.util.CommonUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.pulsar.client.api.Producer;
 import org.apache.pulsar.client.api.ProducerBuilder;
@@ -21,7 +21,7 @@ public class PulsarProducer {
         String topic = "test" + UUID.randomUUID().toString();
         System.out.println(String.format("topic is %s", topic));
         PulsarClient pulsarClient = PulsarClient.builder()
-                .serviceUrl(PulsarConstant.SERVICE_URL)
+                .serviceUrl(PulsarConstant.SERVICE_HTTP_URL)
                 .build();
         ProducerBuilder<String> producerBuilder = pulsarClient.newProducer(Schema.STRING).enableBatching(false);
         Producer<String> producer = producerBuilder.topic(topic).create();

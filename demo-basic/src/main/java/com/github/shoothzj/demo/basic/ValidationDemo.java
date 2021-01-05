@@ -8,7 +8,6 @@ import javax.validation.ValidatorFactory;
 
 /**
  * @author hezhangjian
- * //todo validate
  */
 @Slf4j
 public class ValidationDemo {
