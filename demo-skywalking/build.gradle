@@ -9,10 +9,23 @@ repositories {
     mavenCentral()
 }
 
+task swPulsarProducer(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'com.github.shoothzj.demo.skywalking.pulsar.producer.ProducerMain'
+    }
+    archiveFileName = 'ttbb.jar'
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    with jar
+}
+
 dependencies {
     // https://mvnrepository.com/artifact/org.apache.pulsar/pulsar-client-admin
-    implementation group: 'org.apache.pulsar', name: 'pulsar-client-admin', version: '2.4.0'
+    compile group: 'org.apache.pulsar', name: 'pulsar-client-admin', version: '2.4.0'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: this.rootProject.springBootVersion
+// https://mvnrepository.com/artifact/org.apache.skywalking/apm-toolkit-trace
+//    compile group: 'org.apache.skywalking', name: 'apm-toolkit-trace', version: '8.5.0'
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
