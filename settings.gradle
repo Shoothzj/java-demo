@@ -41,4 +41,5 @@ include 'demo-nio'
 include 'demo-zookeeper'
 include 'demo-redis-lettuce'
 include 'demo-redis-jedis'
+include 'demo-skywalking'
 
